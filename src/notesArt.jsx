@@ -4,7 +4,8 @@ import trashBin from "./assets/trash-bin.png";
 
 function notesArt() {
   const [notes, setNotes] = useState(
-    localStorage.getItem("mood-notes") != "[]"
+    localStorage.getItem("mood-notes") !== "[]" ||
+      localStorage.getItem("mood-notes") !== null
       ? JSON.parse(localStorage.getItem("mood-notes"))
       : () => {
           return [

@@ -6,6 +6,20 @@ import trashBin from "./assets/trash-bin.png";
 
 import "./MainArt.css";
 function MainArt() {
+  // localStorage.removeItem("moods");
+  if (localStorage.getItem("moods") === null) {
+    localStorage.setItem(
+      "moods",
+      JSON.stringify([
+        {
+          title: "So quiet... hmphh",
+          text: `There is not any records yet 🍫... . Hit the Plus button to record From you Mood`,
+          mood: faceSad,
+          date: "From a KitKat chocolate",
+        },
+      ])
+    );
+  }
   // console.log(localStorage.getItem("moods"));
   const [datas, setDatas] = useState(
     localStorage.getItem("moods").length > 2

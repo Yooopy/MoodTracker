@@ -3,6 +3,20 @@ import { useEffect, useState } from "react";
 import trashBin from "./assets/trash-bin.png";
 
 function notesArt() {
+  // localStorage.removeItem("moods");
+  // localStorage.removeItem("mood-notes");
+  if (localStorage.getItem("mood-notes") === null) {
+    localStorage.setItem(
+      "mood-notes",
+      JSON.stringify([
+        {
+          title: "There is nothing..",
+          text: `There is not any Notes yet 🍫... . Hit the Plus button to Create a Note `,
+          date: "From a KitKat chocolate",
+        },
+      ])
+    );
+  }
   // function returnNote() {
   //   let note;
   //   if localStorage.getItem("mood-notes").length > 0

@@ -3,13 +3,12 @@ import "./Header.css";
 import icon from "/icon.png";
 
 function Header() {
-  addEventListener("load", () => {
+  setTimeout(() => {
     if (window.innerWidth < 768) {
       document.getElementsByClassName("search-box")[0].placeholder =
         "Click to Search";
     }
-    return document.removeEventListener("load", () => {});
-  });
+  }, 500);
 
   setTimeout(() => {
     document.getElementsByClassName("intro")[0].style.display = "none";

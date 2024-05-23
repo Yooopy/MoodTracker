@@ -3,11 +3,22 @@ import { useEffect, useState } from "react";
 import trashBin from "./assets/trash-bin.png";
 
 function notesArt() {
+  // function returnNote() {
+  //   let note;
+  //   if localStorage.getItem("mood-notes").length > 0
+  // }
+  // alert(localStorage.getItem("mood-notes"));
   const [notes, setNotes] = useState(
-    localStorage.getItem("mood-notes") !== "[]" ||
-      localStorage.getItem("mood-notes") !== null
+    localStorage.getItem("mood-notes").length > 2
       ? JSON.parse(localStorage.getItem("mood-notes"))
       : () => {
+          localStorage.setItem("mood-note", [
+            {
+              title: "amm... You didnt take any notes yet",
+              text: `, maybe wanna take a note? Hit the Plus button to open to form to take a note`,
+              date: "from a KitKat chocolate",
+            },
+          ]);
           return [
             {
               title: "amm... You didnt take any notes yet",

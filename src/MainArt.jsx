@@ -8,8 +8,7 @@ import "./MainArt.css";
 function MainArt() {
   // console.log(localStorage.getItem("moods"));
   const [datas, setDatas] = useState(
-    localStorage.getItem("moods") !== "[]" ||
-      localStorage.getItem("moods") !== null
+    localStorage.getItem("moods").length > 2
       ? JSON.parse(localStorage.getItem("moods"))
       : () => {
           // localStorage.setItem(

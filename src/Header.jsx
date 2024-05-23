@@ -56,7 +56,7 @@ function Header() {
         }}
       ></textarea>
       <article className="intro">
-        <img src="/icon.png"></img>
+        <img src={icon}></img>
         <p>MoodTracker</p>
       </article>
     </header>

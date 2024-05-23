@@ -3,6 +3,14 @@ import "./Header.css";
 import icon from "/icon.png";
 
 function Header() {
+  addEventListener("load", () => {
+    if (window.innerWidth < 768) {
+      document.getElementsByClassName("search-box")[0].placeholder =
+        "Click to Search";
+    }
+    return document.removeEventListener("load", () => {});
+  });
+
   setTimeout(() => {
     document.getElementsByClassName("intro")[0].style.display = "none";
   }, 2500);

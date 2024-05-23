@@ -253,6 +253,7 @@
     left: 16px;
     margin-left: 0.1%;
   }
+  z-index: 1007;
 }
 .button-main-add:hover {
   filter: brightness(0.95);
